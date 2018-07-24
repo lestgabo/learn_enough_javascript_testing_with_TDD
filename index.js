@@ -41,7 +41,21 @@ function Phrase(content) {
   
   // Returns content processed for palindrome testing.
   this.processedContent = function() {
-    return this.processor(this.content);
+    return this.processor(this.letters());
+  }
+  
+  
+  // Returns the letters in the content.
+  this.letters = function letters() {
+    return Array.from(this.content).filter(c => c.match(/[a-z]/i)).join("");
+    // let theLetters = [];
+    // const letterRegex = /[a-z]/gi;
+    // Array.from(this.content).forEach(function(character) {
+    //   if (character.match(letterRegex)) {
+    //     theLetters.push(character);
+    //   }
+    // });
+    // return theLetters.join("");
   }
   
   // returns true for a palindrome, false otherwise
