@@ -24,6 +24,12 @@ describe("Phrase", function() {
       let punctuatedPalindrome = new Phrase("Madam, I'm Adam.");
       assert(punctuatedPalindrome.palindrome());
     });
+     
+    // 9.4 exercise
+    it("should return false for an empty string", function() {
+      let emptyPhrase = new Phrase("");
+      assert(!emptyPhrase.palindrome());
+    });
       
   });
   

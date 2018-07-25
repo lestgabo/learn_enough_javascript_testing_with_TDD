@@ -47,7 +47,8 @@ function Phrase(content) {
   
   // Returns the letters in the content.
   this.letters = function letters() {
-    return Array.from(this.content).filter(c => c.match(/[a-z]/i)).join("");
+    const lettersRegex = /[a-z]/i;
+    return Array.from(this.content).filter(c => c.match(lettersRegex)).join("");
     // let theLetters = [];
     // const letterRegex = /[a-z]/gi;
     // Array.from(this.content).forEach(function(character) {
@@ -58,9 +59,13 @@ function Phrase(content) {
     // return theLetters.join("");
   }
   
-  // returns true for a palindrome, false otherwise
+  // returns true for a palindrome, false otherwise + 9.4 exercise - empty string
   this.palindrome = function palindrome() {
-    return this.processedContent() === this.processedContent().reverse();
+    if (this.letters()) {
+      return this.processedContent() === this.processedContent().reverse();
+    } else {
+      return false;
+    }
   }
 
   // 7.1 exercise 
